@@ -1,0 +1,44 @@
+:root {
+    --orangie: #fd794d;
+    --skinOrange: #ffa080;
+    --sand: #fcd4c5;
+
+    --darkestBlue: #131b42;
+    --mediumDarkBlue: #202b5f;
+    --mediumBlue: #2244f0;
+    --lichterBlue: #5d73e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header {
+    background-image: url(../img/finalWebSVG-01.svg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+
+    min-height: 120vh;
+}
+
+.burgerMenu {
+    width: 2rem;
+    height: auto;
+
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+main {
+    min-height: 100vh;
+    background-color: var(--darkestBlue);
+}
+
+
+footer {
+
+}
