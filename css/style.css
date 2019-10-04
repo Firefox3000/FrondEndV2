@@ -63,26 +63,90 @@ nav {
 }
 
 nav ul {
-    /* position: absolute; */
-    /* right: 0; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     height: auto;
-    display: none;
+    /* display: none; */
+    padding-top: 4rem;
+    /* text-align: end; */
 
     flex-direction: column;
     align-content: center;
     justify-content: center;
 
-    width: 100%;
-
     /* transform: translateX(120%); */
     transition: transform 0.5s ease-in;
     z-index: 1;
 
-    margin-right: 1rem;
+    /* background-color: var(--mediumBlue); */
+    width: 100vw;
+    min-height: 100px;
+
+    transition: all 1s ease-out;
+    overflow: hidden;
 }
 
-.menuActive ul {
-    display: flex;
+.navBg {
+    position: absolute;
+    top: -50vw;
+    right: -50vw;
+    background-color: var(--mediumBlue);
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+
+    transition: all 1.25s ease-in-out;
+}
+
+
+
+
+@keyframes navUl {
+    form {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes navBg {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 200vw;
+        height: 200vw;
+    }
+}
+
+
+
+
+.menuActive .navBg {
+   animation: navBg 1.2s ease-out ;
+}
+
+.menuActive nav li {
+    animation: navUl .3s ease;
+}
+
+
+
+
+nav ul li {
+    text-align: end;
+    z-index: 2;
+    opacity: 0;
+}
+
+.themeSwitch {
+    width: 20px;
+    height: 20px;
+    background-color: #B27F6D;
 }
 
 nav li {
@@ -153,6 +217,7 @@ nav input[type="text"]:focus {
     height: auto;
     margin-right: .3rem;
     fill: var(--darkestBlue);
+    z-index: 3;
 }
 
 .burgerMenu rect {
@@ -170,7 +235,7 @@ nav input[type="text"]:focus {
 }
 
 .manSteen {
-    max-height: 70vh;
+    max-height: 450px;
     min-width: 100px;
     max-width: 70vw;
 
@@ -304,6 +369,10 @@ h2 {
         bottom: -190px;
         right: 0;
     }
+
+    .manSteen {
+        max-height: 70vh;
+    }    
 }
 
 @media screen and (min-width: 1024px) {
