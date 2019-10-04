@@ -37,8 +37,10 @@ li {
 
 header {
     width: 100vw;
-    min-height: 110vh;
+    height: 100vh;
     background-color: var(--sand);
+
+    position: relative;
 
     /* background-image: url(../img/projWebApp-01.png); */
     background-size: 100vw;
@@ -157,13 +159,23 @@ nav input[type="text"]:focus {
     transition: all .3s ease-in-out;
 }
 
+
+
+/*Header achtergrond*/
+.headerBackground {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
 .manSteen {
-    height: 70vh;
+    max-height: 70vh;
     min-width: 100px;
     max-width: 70vw;
 
     position: absolute;
-    top: 41vh;
+    bottom: calc(-100px + 4vh);
     right: 0;
 }
 
@@ -177,15 +189,15 @@ nav input[type="text"]:focus {
 
 .berg2R {
     position: absolute;
-    top: 65vh;
+    bottom: calc(-100px + 2vh);
     right: 0;
-    width: 40vw;
     max-width: 350px;
+    max-height: 350px;
 }
 
 .berg1L {
     position: absolute;
-    top: 85vh;
+    bottom: -8vh;
     left: 0;
     width: 80vw;
     max-width: 350px;
@@ -202,7 +214,9 @@ h1 {
 }
 
 header section {
-    padding-top: 18vh;
+    position: absolute;
+    top: 18vh;
+    width: 100%;
 }
 
 header section a {
@@ -270,25 +284,16 @@ h2 {
 
     nav ul {
         /* transform: translateX(0); */
-
         position: absolute;
         right: 0;
+
+        display: flex;
     
         flex-direction: row;
         align-content: center;
         justify-content: flex-end;
-        width: 100%;
+        width: 100px;
         margin-top: 0;
-    }
-
-    .berg2R {
-        position: absolute;
-        /* top: 60vh;
-        
-        max-width: 250px; */
-
-        top: 65vh;
-        right: 0;
     }
 }
 
@@ -298,7 +303,6 @@ h2 {
     }
 
     .berg1L {
-        top: 80vh;
         max-width: 500px;
     }
 }
