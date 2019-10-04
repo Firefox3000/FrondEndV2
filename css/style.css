@@ -175,7 +175,7 @@ nav input[type="text"]:focus {
     max-width: 70vw;
 
     position: absolute;
-    bottom: calc(-100px + 4vh);
+    bottom: -50px;
     right: 0;
 }
 
@@ -294,6 +294,15 @@ h2 {
         justify-content: flex-end;
         width: 100px;
         margin-top: 0;
+    }
+
+    .berg2R {
+        max-height: 70vh;
+        min-width: 100px;
+        max-width: 70vw;
+
+        bottom: -190px;
+        right: 0;
     }
 }
 
