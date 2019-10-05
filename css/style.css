@@ -228,13 +228,6 @@ nav input[type="text"]:focus {
 
 
 /*Header achtergrond*/
-.headerBackground {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-}
-
 .manSteen {
     max-height: 450px;
     min-width: 100px;
@@ -257,7 +250,7 @@ h1 {
 
 header section {
     position: absolute;
-    top: 18vh;
+    top: 20vh;
     width: 100%;
 }
 
@@ -272,11 +265,14 @@ header section a {
     text-align: center;
     max-width: 130px;
     margin: 0 auto;
+
+    transition: all .25s ease;
 }
 
 header section a:hover,
 header section a:focus {
     background-color: var(--skinOrange);
+    color: var(--textBlack);
 }
 
 
@@ -291,29 +287,63 @@ main {
 
 h2 {
     color: var(--textWhite);
+    margin-bottom: 1em;
 }
 
-.sliderHome {
+.slider {
     width: 100vw;
     /* ul li 
     h3 p  a  */
 }
 
-.sliderHome ul {
+.slider ul {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    overflow-x: hidden;
+    overflow-x: auto;
+
+    padding: 0 1.1rem;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill, auto);
+    overflow-x: scroll;
+    grid-gap: 1.1rem;
 }
 
-.sliderHome li {
+.slider li {
     box-sizing: border-box;
     padding: 1.2rem;
-    width: 200px;
-    height: 150px;
+    width: 65vw;
+    height: 185px;
     background-color: var(--sand);
     border-radius: 8px;
 }
+
+.slider a {
+    color: var(--textWhite);
+    background-color: var(--mediumBlue);
+
+    display: block;
+    font-size: 1rem;
+
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-align: center;
+    max-width: 130px;
+    margin: 0 auto;
+
+    width: 100%;
+
+    transition: all .25s ease;
+}
+
+.slider a:hover,
+.slider a:focus {
+    background-color: var(--lichterBlue);
+    color: var(--textBlack);
+}
+
 
 
 
