@@ -37,13 +37,14 @@ li {
 
 header {
     width: 100vw;
-    height: 100vh;
+    height: 99vh;
     background-color: var(--sand);
 
-    position: relative;
+    position: relative;  
 
-    /* background-image: url(../img/projWebApp-01.png); */
-    background-size: 100vw;
+    background-image: url(../img/headerBg.svg);
+    background-size: cover;
+    background-position: bottom right;
 }
 
 nav {
@@ -240,32 +241,8 @@ nav input[type="text"]:focus {
     max-width: 70vw;
 
     position: absolute;
-    bottom: -50px;
+    bottom: 0px;
     right: 0;
-}
-
-.wolkenR {
-    max-width: 500px;
-
-    position: absolute;
-    top: -6vh;
-    right: 0;
-}
-
-.berg2R {
-    position: absolute;
-    bottom: calc(-100px + 2vh);
-    right: 0;
-    max-width: 350px;
-    max-height: 350px;
-}
-
-.berg1L {
-    position: absolute;
-    bottom: -8vh;
-    left: 0;
-    width: 80vw;
-    max-width: 350px;
 }
 
 
@@ -361,28 +338,13 @@ h2 {
         margin-top: 0;
     }
 
-    .berg2R {
-        max-height: 70vh;
-        min-width: 100px;
-        max-width: 70vw;
-
-        bottom: -190px;
-        right: 0;
-    }
-
     .manSteen {
         max-height: 70vh;
     }    
 }
 
 @media screen and (min-width: 1024px) {
-    .wolkenR {
-        max-width: 600px;
-    }
 
-    .berg1L {
-        max-width: 500px;
-    }
 }
 
 
