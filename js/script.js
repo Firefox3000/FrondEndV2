@@ -1,8 +1,10 @@
 const weatherApiKey = '&units=metric&APPID=d2eb5b400421ec9aceb37cab13852517';
-const weatherApiUrl = 'api.openweathermap.org/data/2.5/weather?';
+const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 
-const hikeApiUrl = 'https://www.hikingproject.com/data/';
-const hikeApiKey = '&key200612053-f2907f0c887fb6db20bc6ef07aacbced';
+const hikeApiUrl = 'https://www.hikingproject.com/data/get-trails?';
+const hikeApiKey = '&key=200612053-f2907f0c887fb6db20bc6ef07aacbced';
+
+// https://www.hikingproject.com/data/get-trails?lat=51.59&lon=-4.78&maxDistance=10&key=200612053-f2907f0c887fb6db20bc6ef07aacbced
 
 var weatherData;
 var hikeData;
@@ -46,12 +48,12 @@ async function getApi() {
 
     console.log ('lat= ' + lat + ' lon= '+ lon);
 
-    let api2 = hikeApiUrl + 'get-trails?lat=' + lat + '&lon=' + lon + hikeApiKey;
+    let api2 = hikeApiUrl + 'lat=' + lat + '&lon=' + lon + '&maxDistance=100' + hikeApiKey;
     console.log(api2);
 
     hikeData = await fetch(api2);
     hikeData = await hikeData.json();
-    console.log(weatherData);
+    console.log(hikeData);
 
     // get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200612053-f2907f0c887fb6db20bc6ef07aacbced
 };
