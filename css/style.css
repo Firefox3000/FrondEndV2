@@ -35,16 +35,21 @@ li {
     list-style: none;
 }
 
-header {
-    width: 100vw;
-    height: 99vh;
-    background-color: var(--sand);
-
-    position: relative;  
-
+.homeHeader {
     background-image: url(../img/headerBg.svg);
     background-size: cover;
     background-position: bottom right;
+    height: 99vh;
+    background-color: var(--sand);
+}
+
+header {
+    width: 100vw;
+    
+
+
+    position: relative;  
+
 }
 
 nav {
@@ -102,8 +107,6 @@ nav ul {
 }
 
 
-
-
 @keyframes navUl {
     form {
         opacity: 0;
@@ -112,20 +115,6 @@ nav ul {
         opacity: 1;
     }
 }
-
-@keyframes navBg {
-    from {
-        width: 0;
-        height: 0;
-    }
-    to {
-        width: 200vw;
-        height: 200vw;
-    }
-}
-
-
-
 
 .menuActive .navBg {
    animation: navBg 1.2s ease-out ;
@@ -225,8 +214,6 @@ nav input[type="text"]:focus {
     transition: all .3s ease-in-out;
 }
 
-
-
 /*Header achtergrond*/
 .manSteen {
     max-height: 450px;
@@ -237,8 +224,6 @@ nav input[type="text"]:focus {
     bottom: 0px;
     right: 0;
 }
-
-
 
 h1 {
     text-align: center;
@@ -383,6 +368,73 @@ h2 {
 }
 
 
+
+
+#zoeken {
+    padding-top: 6rem;
+}
+
+/*form defeault stijling*/
+form {
+    width: 100%;
+    max-width: 95vw;
+}
+
+
+/*Slider*/
+input[type=range] {
+    -webkit-appearance: none;
+
+    margin: .2rem 0 .7rem 0;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--textWhite);
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--mediumBlue);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type=range]:focus::-webkit-slider-thumb {
+    background: var(--sand);
+}
+
+
+/*Tekst field*/
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1.2px solid var(--text-col1);
+    border-radius: 1px;
+    box-sizing: border-box;
+}
+
+
+/*Submit*/
+input[type=submit] {
+    border: none;
+    cursor: pointer;
+
+    font-size: 1rem;
+    padding: 16px 32px;
+    background-color: var(--mediumBlue);
+    border-radius: 4px;
+    color: var(--textWhite)
+}
+
+
+
 /* footer {} */
 
 @media screen and (min-width: 768px) {
@@ -407,8 +459,6 @@ h2 {
     .manSteen {
         max-height: 70vh;
     }
-    
-    
 
     .slider ul {  
         padding: 0 1.1rem;
@@ -485,6 +535,17 @@ h2 {
         width: 100%;
         border-color: var(--mediumBlue);
         padding: 12px 20px 12px 40px;
+    }
+}
+
+@keyframes navBg {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 200vw;
+        height: 200vw;
     }
 }
 
