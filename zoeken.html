@@ -11,57 +11,78 @@
 <body>
     <header>
         <nav>
-            <form>
+            <a href="index.html">Terug</a>
+            <!-- <form>
                 <input type="text" name="" placeholder="Zoeken...">
-            </form>
+            </form> -->
 
             <ul>
                 <div class="navBg">
                 </div>
 
                 <li>
-                    <a href="#">Inloggen</a>
+                    <a href="#">Mijn account</a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#">Account maken</a>
                 </li>
                 <li>
                     <a href="#">Zoeken</a>
-                </li>
+                </li> -->
                 <li class="themeSwitch">
                     <a href="#"></a>
                 </li>
             </ul>
 
-            <svg class="burgerMenu" x="0px" y="0px" viewBox="0 0 25 21" xml:space="preserve">
+            <!-- <svg class="burgerMenu" x="0px" y="0px" viewBox="0 0 25 21" xml:space="preserve">
                 <rect x="0" y="0" width="25" height="3" />
                 <rect x="0" y="9" width="25" height="3" />
                 <rect x="0" y="18" width="25" height="3" />
-            </svg>
+            </svg> -->
         </nav>
     </header>
 
     <main id="zoeken">
         <form>
-            <input class="zoekLocatie" type="text" name="Zoek" placeholder="Zoeken op locatie">
+            <input class="zoekLocatie" type="text" name="Zoek" placeholder="Zoeken een wandel locatie">
             <!-- <input class="zoek2" type="text" name="Zoek" placeholder="Zoeken..."> <br> -->
-            Keuken<br>
+            <!-- <input type=""> -->
+            <button>Gebuik huidige locatie</button>
+
+
+            <!-- Keuken<br>
             <select class="dropdown1" name="dropown">
                 <option value="chinees">Chinees</option>
                 <option value="grieks">Grieks</option>
                 <option value="italiaans">Italiaans</option>
-            </select>
-            Grecht<br>
-            <select class="dropdown1" name="dropown">
-                <option value="optie1">Pasta</option>
-                <option value="optie2">Hamburgers</option>
-                <option value="optie3">Broodjes</option>
-            </select>
-            Prijs<br>
-            <input type="range" min="1" max="100" value="50">
+            </select> -->
+
+            <label for="zoekRange">Kies afstand</label>
+            <input id="zoekRange" class="range" type="range" min="1" max="250" value="100">
+            <p class="viewRange">100</p>
 
             <input class="submitZoeken" type="submit" value="Zoeken">
         </form>
+
+        <ul class="searchResult">
+
+<!-- 
+        <li>
+            <div class="pic"></div>
+            <div class="itemContent">
+                <h3>Route 1</h3>
+                <p>8,3 km | 1,5 uur</p>
+            </div>
+            <a href="#">Start de Route</a>
+            <svg class="favIcon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400"
+                style="enable-background:new 0 0 400 400;" xml:space="preserve">
+                <path d="M283.5,18.5c-18.6,0-36.4,4.3-52.9,12.7c-11.2,5.7-21.5,13.3-30.4,22.4c-8.8-9-19.2-16.7-30.4-22.4
+                    c-16.5-8.4-34.3-12.7-52.9-12.7C52.7,18.5,0.5,70.8,0.5,135c0,45.5,24,93.8,71.4,143.6c39.6,41.6,88,76.2,121.7,98l6.7,4.3l6.7-4.3
+                    c33.7-21.8,82.1-56.4,121.7-98C376,228.8,400,180.5,400,135C400,70.8,347.7,18.5,283.5,18.5z" />
+            </svg>
+        </li> -->
+        </ul>
     </main>
 
     <footer>
