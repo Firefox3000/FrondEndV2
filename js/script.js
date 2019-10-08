@@ -58,9 +58,12 @@ async function getApi() {
 };
 
 
-
 function createRouteElements() {
     console.log(hikeData.trails.length);
+    // clear ul
+    while (document.querySelector('.searchResult li')) {
+        document.querySelector('.searchResult li').remove();
+    }
 
     for (let i = 0; i < hikeData.trails.length; i++) {
         // create li in ul
@@ -86,8 +89,8 @@ function createRouteElements() {
 
         let length = document.createElement('p');
         let trailLenth = Math.round(hikeData.trails[i].length / 0.62137 * 100) / 100;
-        length.innerHTML = trailLenth + ' km | ' + Math.round(trailLenth / 5 * 100) / 100+ ' uur';
-        
+        length.innerHTML = trailLenth + ' km | ' + Math.round(trailLenth / 5 * 100) / 100 + ' uur';
+
         itemContent.appendChild(length);
 
         // Create link
@@ -126,10 +129,24 @@ function logLocation(position) {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
 }
-getLocation();
 
 document.querySelector('.submitZoeken').addEventListener('click', function (event) {
     event.preventDefault();
 });
-
 document.querySelector('.submitZoeken').addEventListener('click', getApi);
+
+document.querySelector('form button').addEventListener('click', function (event) {
+    event.preventDefault();
+});
+document.querySelector('form button').addEventListener('click', getLocation);
+
+
+document.querySelector('#zoekRange').addEventListener('input', sliderValue);
+
+function sliderValue() {
+    if (document.querySelector('#zoekRange').value < 250) {
+        document.querySelector('.viewRange').innerHTML = document.querySelector('#zoekRange').value;
+    } else {
+        document.querySelector('.viewRange').innerHTML = 'Alle afstanden';
+    }
+}

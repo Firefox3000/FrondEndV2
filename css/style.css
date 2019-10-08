@@ -405,7 +405,6 @@ input[type=text]::placeholder {
     font-size: .85rem;
 }
 
-
 input[type=text]:focus {
     outline: none;
     background-color: var(--mediumBlue);
@@ -436,25 +435,27 @@ label {
 
 /*Zoekresultaten stijling*/
 
-.searchResult ul {
-    padding: 0 1.1rem;
+.searchResult {
+    padding: 1.1rem;
     box-sizing: border-box;
+    margin: 0 auto;
     width: 100vw;
+    max-width: 1300px;
 
     display: grid;
-    /* grid-auto-flow: column; */
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
     grid-template-rows: auto;
-    justify-content: center;
+    justify-items: center;
 
     align-items: center;
-    /* grid-gap: 1.1rem; */
+    grid-gap: 1.1rem;
 }
 
 .searchResult li {
     box-sizing: border-box;
     padding: 1.2rem 1.5rem;
-    width: 65vw;
+    width: 100%;
+    max-width: 600px;    
     height: 185px;
     background-color: var(--sand);
     border-radius: 10px;
@@ -488,6 +489,7 @@ label {
     margin: 0 auto;
 
     width: 100%;
+    align-self: center;
 
     transition: all .25s ease;
 
