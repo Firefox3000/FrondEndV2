@@ -36,8 +36,8 @@ async function getApi() {
     let api1 = weatherApiUrl + document.querySelector('.zoekLocatie').value + weatherApiKey;
     console.log(api1);
 
-    // weatherData = await fetch(api1);
-    weatherData = await fetch('http://127.0.0.1:5500/weather.json');
+    weatherData = await fetch(api1);
+    // weatherData = await fetch('http://127.0.0.1:5500/weather.json');
     weatherData = await weatherData.json();
     console.log(weatherData);
 
@@ -49,14 +49,13 @@ async function getApi() {
     let api2 = hikeApiUrl + 'lat=' + lat + '&lon=' + lon + '&maxDistance=' + document.querySelector('.range').value + hikeApiKey;
     console.log(api2);
 
-    // hikeData = await fetch(api2);
-    hikeData = await fetch('http://127.0.0.1:5500/hike.json')
+    hikeData = await fetch(api2);
+    // hikeData = await fetch('http://127.0.0.1:5500/hike.json')
     hikeData = await hikeData.json();
     console.log(hikeData);
 
     createRouteElements();
 };
-
 
 function createRouteElements() {
     console.log(hikeData.trails.length);
