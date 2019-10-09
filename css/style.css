@@ -36,7 +36,7 @@ li {
 }
 
 /******************
-        Header
+      Header
 ******************/
 
 /*Header landing pagina*/
@@ -47,6 +47,10 @@ li {
     height: 99vh;
     background-color: var(--sand);
     box-shadow: inset 0px -10px 0px 0px var(--darkestBlue);
+}
+
+.homeHeader .burgerMenu rect {
+    fill: var(--textBlack);
 }
 
 header {
@@ -74,36 +78,37 @@ nav {
     padding: .5rem;
 }
 
+nav a {
+    margin-right: auto;
+}
+
 nav ul {
     z-index: 2;
     white-space: nowrap;
-
     justify-content: space-between;
-    /* max-height: 1.2rem */
-    margin-right: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    position: absolute;
+    right: 0;
+    top: 5rem;
 
 
-    /* margin-right: 1rem;  */
-    /* height: auto; */
     /* display: none; */
-    /* padding-top: 4rem; */
-    /* text-align: end; */
 
-    /* flex-direction: row; */
-    /* align-content: center; */
-    /* justify-content: center; */
-
+    /* padding-right: 1rem;  */
     /* transform: translateX(120%); */
     /* transition: transform 0.5s ease-in; */
 
-    /* background-color: var(--mediumBlue); */
-    /* width: 100vw; */
-    /* min-height: 100px; */
-
-
     /* transition: all 1s ease-out; */
-    /* overflow: hidden; */
-    /* padding: 0; */
+    overflow: hidden;
+}
+
+.zoekNav a {
+    color: var(--textWhite);
 }
 
 nav li {
@@ -112,11 +117,23 @@ nav li {
 
     font-size: 1rem;
     margin-left: 1rem;
+    margin-bottom: 1rem;
     text-align: right;
 
     width: auto;
     position: relative;
+
+    background-color: var(--mediumBlue);
+    padding: 1rem 1.5rem;
+    border-radius: 4rem 0 0 4rem;
+    transform: translateX(110%);
+    transition: transform .3s ease-out;
 }
+
+.menuActive li{
+    transform: translateX(0);
+}
+
 
 nav li a {
     text-decoration: none;
@@ -187,9 +204,24 @@ nav input[type="text"]:focus {
     z-index: 3;
 }
 
+
 .burgerMenu rect {
+    fill: var(--textWhite);
     transition: all .3s ease-in-out;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*Header achtergrond*/
 .manSteen {
@@ -532,13 +564,6 @@ label {
     max-width: 800px;
 }
 
-.zoekLocatie {
-    box-sizing: border-box;
-    max-width: calc(100% - 100px);
-    margin: 0;
-}
-
-
 .getLocation {
     border-radius: 10px;
     width: 25px;
@@ -569,50 +594,64 @@ label {
     transform: scale(.65);
 }
 
+form fieldset {
+    margin-bottom: 1rem;
+}
+
+/*Fieldset*/
+.zoekLocatie {
+    width: 100%;
+    overflow: hidden;
+}
+
+.zoekLocatie {
+    color: var(--textWhite);
+    border: 0;
+    padding: 1rem 0;
+}
+
+.zoekLocatie input[type=text] {
+    box-sizing: border-box;
+    max-width: calc(100% - 60px);
+    margin: 0;
+}
+
+.zoekLocatie button {
+    margin: 0 0 0 1rem;
+}
+
+.zoekLocatie div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 
-/* footer {} */
+/******************
+      Footer
+******************/
 
-@media screen and (min-width: 768px) {
-    /* .burgerMenu {
-        display: none;
-    } */
+footer {
+    text-align: center;
+    background-color: var(--darkestBlue);
+}
 
-    /* nav {
-        justify-content: space-between;`
-        align-content: center;
-    }
+footer p {
+    color: var(--textWhite);
+}
 
+@media screen and (min-width: 768px) { 
     nav form {
         max-width: 50vw;
     }
 
-    nav ul {
-        position: absolute;
-        right: 0;
-        top: 0;
-
-        max-width: 50vw;
-        padding: 0;
-
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: flex-end;
-        width: auto;
-        min-height: 1.2rem;
-        margin: 0;
-
-        z-index: 4;
+    .zoekNav li a {
+        color: var(--textWhite);
     }
 
-    nav ul li {
-        display: block;
-        z-index: 3;
-        opacity: 1;
-
-        max-height: 0;
-    } */
+    nav li {
+        margin-bottom: .5em;
+    }
 
     .manSteen {
         max-height: 70vh;
@@ -656,8 +695,9 @@ label {
     .getLocation {
         border-radius: 10px;
         width: 50%;
+        max-width: 15rem;;
         height: auto;
-        margin: 0;
+        margin: 0 0 0 1rem;
         box-sizing: border-box;
         color: var(--textWhite);
     

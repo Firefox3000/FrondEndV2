@@ -20,11 +20,11 @@ function setup() {
 setup()
 
 function toggleNav() {
-    document.querySelector('.burgerMenu').classList.toggle('menuActive');
+    // document.querySelector('.burgerMenu').classList.toggle('menuActive');
     document.querySelector('nav').classList.toggle('menuActive');
 }
 
-// document.querySelector('.burgerMenu').addEventListener('click', toggleNav);
+document.querySelector('.burgerMenu').addEventListener('click', toggleNav);
 
 
 function favorite(e) {
