@@ -38,21 +38,6 @@ li {
 /******************
       Header
 ******************/
-
-/*Header landing pagina*/
-.homeHeader {
-    background-image: url(../img/headerBg.svg);
-    background-size: cover;
-    background-position: bottom right;
-    height: 99vh;
-    background-color: var(--sand);
-    box-shadow: inset 0px -10px 0px 0px var(--darkestBlue);
-}
-
-.homeHeader .burgerMenu rect {
-    fill: var(--textBlack);
-}
-
 header {
     width: 100vw;
     position: relative;
@@ -78,10 +63,6 @@ nav {
     padding: .5rem;
 }
 
-nav a {
-    margin-right: auto;
-}
-
 nav ul {
     z-index: 2;
     white-space: nowrap;
@@ -95,20 +76,7 @@ nav ul {
     position: absolute;
     right: 0;
     top: 5rem;
-
-
-    /* display: none; */
-
-    /* padding-right: 1rem;  */
-    /* transform: translateX(120%); */
-    /* transition: transform 0.5s ease-in; */
-
-    /* transition: all 1s ease-out; */
     overflow: hidden;
-}
-
-.zoekNav a {
-    color: var(--textWhite);
 }
 
 nav li {
@@ -124,21 +92,19 @@ nav li {
     position: relative;
 
     background-color: var(--mediumBlue);
-    padding: 1rem 1.5rem;
+    padding: 1rem 3rem 1rem 2rem;
     border-radius: 4rem 0 0 4rem;
     transform: translateX(110%);
     transition: transform .3s ease-out;
 }
 
-.menuActive li{
-    transform: translateX(0);
-}
-
-
 nav li a {
     text-decoration: none;
     color: var(--textBlack);
-    width: auto;
+}
+
+.zoekNav a {
+    color: var(--textWhite);
 }
 
 nav li a:focus {
@@ -147,7 +113,7 @@ nav li a:focus {
 
 nav li a:after {
     position: absolute;
-    bottom: -5px;
+    bottom: .8rem;
     left: 0;
     right: 0;
     margin: auto;
@@ -163,6 +129,20 @@ nav li a:focus::after {
     width: 75%;
 }
 
+/*Hamburger menu*/
+.burgerMenu {
+    width: 1.9rem;
+    height: auto;
+    margin-right: 1.5rem;
+    fill: var(--darkestBlue);
+}
+
+.burgerMenu rect {
+    fill: var(--textWhite);
+    transition: all .3s ease-in-out;
+}
+
+/*Nav zoeken*/
 nav form {
     width: 100%;
     height: auto;
@@ -184,6 +164,7 @@ nav input[type="text"] {
     transition: width .3s ease-out;
     outline: none;
     max-width: 600px;
+    background-color: var(--textWhite);
 }
 
 nav input[type="text"]:focus {
@@ -196,34 +177,22 @@ nav input[type="text"]:focus {
     background-color: greenyellow;
 }
 
-.burgerMenu {
-    min-width: 1.9rem;
-    height: auto;
-    margin-right: .3rem;
-    fill: var(--darkestBlue);
-    z-index: 3;
+/*Menu uitgeklapt*/
+.menuActive li{
+    transform: translateX(0);
 }
 
 
-.burgerMenu rect {
-    fill: var(--textWhite);
-    transition: all .3s ease-in-out;
+/*Header landing pagina*/
+.homeHeader {
+    background-image: url(../img/headerBg.svg);
+    background-size: cover;
+    background-position: bottom right;
+    height: 99vh;
+    background-color: var(--sand);
+    box-shadow: inset 0px -10px 0px 0px var(--darkestBlue);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Header achtergrond*/
 .manSteen {
     max-height: 450px;
     min-width: 100px;
@@ -234,6 +203,15 @@ nav input[type="text"]:focus {
     right: 0;
 }
 
+.homeHeader .burgerMenu rect {
+    fill: var(--textBlack);
+}
+
+.homeHeader nav a {
+    color: var(--textWhite);
+}
+
+/*Home header knop*/
 h1 {
     text-align: center;
     font-size: 2rem;
@@ -242,13 +220,13 @@ h1 {
     margin-bottom: 55px;
 }
 
-header section {
+.homeHeader section {
     position: absolute;
     top: 20vh;
     width: 100%;
 }
 
-header section a {
+.homeHeader section a {
     display: block;
     font-size: 1rem;
     text-decoration: none;
@@ -263,11 +241,12 @@ header section a {
     transition: all .25s ease;
 }
 
-header section a:hover,
-header section a:focus {
+.homeHeader section a:hover,
+.homeHeader section a:focus {
     background-color: var(--skinOrange);
     color: var(--textBlack);
 }
+
 
 
 /******************
