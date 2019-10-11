@@ -32,8 +32,8 @@ function favorite(e) {
 }
 
 async function getApi() {
-    console.log(document.querySelector('.zoekLocatie').value);
-    let api1 = weatherApiUrl + document.querySelector('.zoekLocatie').value + weatherApiKey;
+    console.log(document.querySelector('#zoekLocatie').value);
+    let api1 = weatherApiUrl + document.querySelector('#zoekLocatie').value + weatherApiKey;
     console.log(api1);
 
     weatherData = await fetch(api1);
@@ -119,32 +119,19 @@ function createRouteElements() {
 */
 
 function getLocation() {
-    console.log('getLocation');
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(logLocation);
     }
-    document.querySelector('#zoekLocatie').value = 'lat en lon';
 }
 
 function logLocation(position) {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
-
-    document.querySelector('#zoekLocatie').value = position.coords.latitude + ' ' + position.coords.longitude;
+    document.querySelector('#zoekLocatie').value = 'Lat: ' + position.coords.latitude.toFixed(2) + ' Lon: ' + position.coords.longitude.toFixed(2);
 }
 
-document.querySelector('.submitZoeken').addEventListener('click', function (event) {
-    event.preventDefault();
-});
-document.querySelector('.submitZoeken').addEventListener('click', getApi);
-
-document.querySelector('form button').addEventListener('click', function (event) {
-    event.preventDefault();
-});
-document.querySelector('form button').addEventListener('click', getLocation);
 
 
-document.querySelector('#zoekRange').addEventListener('input', sliderValue);
 
 function sliderValue() {
     if (document.querySelector('#zoekRange').value < 250) {
@@ -160,3 +147,17 @@ function themeSwitch() {
 }
 
 document.querySelector('#themeSwitch').addEventListener('click', themeSwitch);
+
+document.querySelector('.submitZoeken').addEventListener('click', function (event) {
+    event.preventDefault();
+});
+document.querySelector('.submitZoeken').addEventListener('click', getApi);
+
+document.querySelector('form button').addEventListener('click', function (event) {
+    event.preventDefault();
+});
+
+
+
+document.querySelector('#zoekRange').addEventListener('input', sliderValue);
+document.querySelector('form button').addEventListener('click', getLocation);

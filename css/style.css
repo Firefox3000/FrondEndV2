@@ -8,11 +8,9 @@
 body {
     overflow-x: hidden;
 
-
     --orangie: #fd794d;
     --skinOrange: #ffa080;
     --sand: #fcd4c5;
-
     --darkestBlue: #131b42;
     --mediumDarkBlue: #202b5f;
     --mediumBlue: #2244f0;
@@ -24,18 +22,17 @@ body {
 }
 
 .lightTheme {
-    --orangie: #fd794d;
-    --skinOrange: #ffa080;
-    --sand: #5d73e5;
-
+    --orangie: #5d73e5;
+    --skinOrange: #2244f0;
+    --sand: #202b5f;
     --darkestBlue: #131b42;
     --mediumDarkBlue: #202b5f;
-    --mediumBlue: #5d73e5;
-    --lichterBlue: #5d73e5;
+    --mediumBlue: #ffa080;
+    --lichterBlue: #fcd4c5;
 
     --textWhite: #fafafa;
     --textBlack: #0c0c0c;
-    --focus-col: #fcd4c5;
+    --focus-col: #131b42;
 }
 
 svg {
@@ -50,6 +47,9 @@ li {
     list-style: none;
 }
 
+p {
+    max-width: 30rem;
+}
 /******************
       Header
 ******************/
@@ -189,11 +189,15 @@ nav input[type="text"]:focus {
     animation: searchAni .5s ease-in-out alternate forwards;
 }
 
+#themeSwitch {
+    max-height: 1.5rem;
+}
 
 #themeSwitch button {
     background-color: rgba(0, 0, 0, 0);
     padding: 0;
-    margin: 0;
+    margin: auto;
+    border: none;
 }
 
 #themeSwitch svg {
@@ -214,7 +218,6 @@ nav input[type="text"]:focus {
 .menuActive li{
     transform: translateX(0);
 }
-
 
 /*Header landing pagina*/
 .homeHeader {
@@ -455,10 +458,9 @@ input[type=text]::placeholder {
 input[type=text]:focus {
     outline: none;
     border: solid 1.5px var(--focus-col);
-    background-color: var(--mediumBlue);
 }
 
-/*Submit*/
+/*Submit en buttons*/
 input[type=submit],
 button {
     border: none;
@@ -467,8 +469,15 @@ button {
     font-size: 1rem;
     padding: 16px 32px;
     background-color: var(--mediumBlue);
-    border-radius: 4px;
-    color: var(--textWhite)
+    border-radius: 7px;
+    color: var(--textWhite);
+    border: solid 1.5px rgba(0, 0, 0, 0);
+}
+
+input[type=submit]:focus,
+button:focus {
+    border: solid 1.5px var(--focus-col);
+    outline: none;
 }
 
 label {
