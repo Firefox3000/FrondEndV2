@@ -1,4 +1,14 @@
-:root {
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+
+
     --orangie: #fd794d;
     --skinOrange: #ffa080;
     --sand: #fcd4c5;
@@ -10,17 +20,22 @@
 
     --textWhite: #fafafa;
     --textBlack: #0c0c0c;
+    --focus-col: #fcd4c5;
 }
 
-* {
-    margin: 0;
-    padding: 0;
+.lightTheme {
+    --orangie: #fd794d;
+    --skinOrange: #ffa080;
+    --sand: #5d73e5;
 
-    font-family: 'Open Sans', sans-serif;
-}
+    --darkestBlue: #131b42;
+    --mediumDarkBlue: #202b5f;
+    --mediumBlue: #5d73e5;
+    --lichterBlue: #5d73e5;
 
-body {
-    overflow-x: hidden;
+    --textWhite: #fafafa;
+    --textBlack: #0c0c0c;
+    --focus-col: #fcd4c5;
 }
 
 svg {
@@ -77,6 +92,8 @@ nav ul {
     right: 0;
     top: 5rem;
     overflow: hidden;
+
+    pointer-events: none;
 }
 
 nav li {
@@ -130,14 +147,15 @@ nav li a:focus::after {
 }
 
 /*Hamburger menu*/
-.burgerMenu {
+#burgerMenu {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 1.5rem;
     width: 1.9rem;
     height: auto;
-    margin-right: 1.5rem;
-    fill: var(--darkestBlue);
 }
 
-.burgerMenu rect {
+#burgerMenu rect {
     fill: var(--textWhite);
     transition: all .3s ease-in-out;
 }
@@ -171,13 +189,28 @@ nav input[type="text"]:focus {
     animation: searchAni .5s ease-in-out alternate forwards;
 }
 
-.themeSwitch {
-    width: 20px;
-    height: 20px;
-    background-color: greenyellow;
+
+#themeSwitch button {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
 }
 
+#themeSwitch svg {
+    height: 1.5rem;
+    width: auto;
+}
+
+#themeSwitch path {
+    fill: var(--textWhite);
+}
+
+
 /*Menu uitgeklapt*/
+.menuActive ul {
+    pointer-events: all;
+}
+
 .menuActive li{
     transform: translateX(0);
 }
@@ -203,7 +236,7 @@ nav input[type="text"]:focus {
     right: 0;
 }
 
-.homeHeader .burgerMenu rect {
+.homeHeader #burgerMenu rect {
     fill: var(--textBlack);
 }
 
@@ -216,7 +249,6 @@ h1 {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-
     margin-bottom: 55px;
 }
 
@@ -237,7 +269,6 @@ h1 {
     text-align: center;
     max-width: 130px;
     margin: 0 auto;
-
     transition: all .25s ease;
 }
 
@@ -396,7 +427,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]:focus::-webkit-slider-thumb {
-    background: var(--sand);
+    background: var(--focus-col);
 }
 
 
@@ -412,6 +443,8 @@ input[type=text] {
     border-radius: 10px;
     box-sizing: border-box;
     background-color: var(--mediumDarkBlue);
+    color: var(--textWhite);
+    border: solid 1.5px rgba(0, 0, 0, 0);
 }
 
 input[type=text]::placeholder {
@@ -421,6 +454,7 @@ input[type=text]::placeholder {
 
 input[type=text]:focus {
     outline: none;
+    border: solid 1.5px var(--focus-col);
     background-color: var(--mediumBlue);
 }
 
@@ -436,7 +470,6 @@ button {
     border-radius: 4px;
     color: var(--textWhite)
 }
-
 
 label {
     color: var(--textWhite);
@@ -490,21 +523,18 @@ label {
 }
 
 .searchResult a {
+    display: block;
+    width: 100%;
+    max-width: 130px;
+    padding: 14px 32px;
+    margin: 0 auto;
+    border-radius: 100px;
+    
     color: var(--textWhite);
     background-color: var(--mediumBlue);
-
-    display: block;
-    font-size: 1rem;
-
-    padding: 14px 32px;
-    border-radius: 100px;
-    text-align: center;
-    max-width: 130px;
-    margin: 0 auto;
-
-    width: 100%;
+    font-size: 1rem;    
+    text-align: center;   
     align-self: center;
-
     transition: all .25s ease;
 
     grid-area: itemLink;
@@ -529,13 +559,6 @@ label {
 }
 
 
-
-
-
-
-
-
-
 /*Zoeken form*/
 #zoeken form {
     margin: 0 auto;
@@ -558,10 +581,8 @@ label {
 
     background-color: var(--mediumBlue);
     position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center; */
+
+    border: solid 1.5px rgba(0, 0, 0, 0);
 }
 
 .getLocation svg {
@@ -571,6 +592,10 @@ label {
     width: auto;
     height: 100%;
     transform: scale(.65);
+}
+
+.getLocation:focus {
+    border: solid 1.5px var(--focus-col);
 }
 
 form fieldset {
@@ -611,12 +636,15 @@ form fieldset {
 ******************/
 
 footer {
+    width: 100%;
+    margin-top: -1px;
     text-align: center;
     background-color: var(--darkestBlue);
 }
 
 footer p {
     color: var(--textWhite);
+    padding: .7rem;
 }
 
 @media screen and (min-width: 768px) { 

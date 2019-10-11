@@ -15,25 +15,35 @@
                 <img src="img/iconsZoek.svg" alt="Terug">
             </a>
 
-            <svg class="burgerMenu" x="0px" y="0px" viewBox="0 0 25 21" xml:space="preserve">
+            <button id="burgerMenu">
+                <svg x="0px" y="0px" viewBox="0 0 25 21" xml:space="preserve">
                     <rect x="0" y="0" width="25" height="3" />
                     <rect x="0" y="9" width="25" height="3" />
                     <rect x="0" y="18" width="25" height="3" />
-            </svg>
+                </svg>
+            </button>
 
-            <ul>      
+            <ul>
                 <li>
                     <a href="#">Favoriete routes</a>
                 </li>
                 <li>
-                        <a href="#">Mijn account</a>
+                        <a href="#">Routes zoeken</a>
                     </li>
-                <li class="themeSwitch">
-                    <a href="#"></a>
+                <li>
+                    <a href="#">Mijn account</a>
+                </li>
+                <li id="themeSwitch">
+                    <button>
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 243 243"
+                            style="enable-background:new 0 0 243 243;" xml:space="preserve">
+                            <circle cx="121.5" cy="121.5" r="121.5" />
+                            <path d="M223,121.5c0,56-45.5,101.5-101.5,101.5V20C177.5,20,223,65.5,223,121.5z" />
+                        </svg>
+                    </button>
                 </li>
             </ul>
-
-            
         </nav>
     </header>
 
@@ -42,7 +52,7 @@
             <fieldset class="zoekLocatie">
                 <legend>Locatie:</legend>
                 <div>
-                    <input class="zoekLocatie" type="text" name="Zoek" placeholder="Zoeken een wandel locatie">
+                    <input id="zoekLocatie" type="text" name="Zoek" placeholder="Zoeken een wandel locatie">
                     <button class="getLocation">Gebuik huidige locatie
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
@@ -70,8 +80,6 @@
         </form>
 
         <ul class="searchResult">
-
-
         </ul>
         <!-- 
         <li>

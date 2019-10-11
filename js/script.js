@@ -24,7 +24,7 @@ function toggleNav() {
     document.querySelector('nav').classList.toggle('menuActive');
 }
 
-document.querySelector('.burgerMenu').addEventListener('click', toggleNav);
+document.querySelector('#burgerMenu').addEventListener('click', toggleNav);
 
 
 function favorite(e) {
@@ -119,14 +119,18 @@ function createRouteElements() {
 */
 
 function getLocation() {
+    console.log('getLocation');
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(logLocation);
     }
+    document.querySelector('#zoekLocatie').value = 'lat en lon';
 }
 
 function logLocation(position) {
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
+
+    document.querySelector('#zoekLocatie').value = position.coords.latitude + ' ' + position.coords.longitude;
 }
 
 document.querySelector('.submitZoeken').addEventListener('click', function (event) {
@@ -149,3 +153,10 @@ function sliderValue() {
         document.querySelector('.viewRange').innerHTML = 'Alle afstanden';
     }
 }
+
+
+function themeSwitch() {
+    document.querySelector('body').classList.toggle('lightTheme');
+}
+
+document.querySelector('#themeSwitch').addEventListener('click', themeSwitch);
