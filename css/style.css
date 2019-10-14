@@ -300,6 +300,11 @@ h1 {
 
 
 
+.mobNone {
+    display: none;
+}
+
+
 /******************
         Main
 ******************/
@@ -904,7 +909,6 @@ li.item {
     display: flex;
     justify-content: flex-end;
     grid-area: detailButtons;
-    padding-right: 1rem;
 }
 
 #detail button {
@@ -922,7 +926,6 @@ li.item {
     border-radius: 100px;
     text-align: center;
     max-width: 130px;
-    margin: 0 1rem;
     transition: all .25s ease;
 }
 
@@ -949,6 +952,20 @@ li.item {
     fill: var(--textWhite);
 }
 
+#detail button{
+    margin-left: 1rem;
+}
+
+button .favIcon {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: var(--lichterBlue);
+}
+
+button .favIconActive {
+    background-color: var(--skinOrange);
+}
 
 
 /******************
@@ -1059,14 +1076,22 @@ footer p {
 }
 
 @media screen and (min-width: 1024px) {
+    .mobNone {
+        display: block;
+    }
+
+    .slider .mobNone {
+        grid-area: itemInfo;
+    }
+
     .slider li {
         height: 350px;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
-            "itemPic"
-            "itemContent"
-            "itemLink";
+            "itemPic itemContent"
+            "itemPic itemInfo"
+            "itemLink itemLink";
 
         align-items: center;
     }
