@@ -316,6 +316,28 @@ main {
     padding-bottom: 3rem;
 }
 
+.homeMain {
+    min-height: auto;
+}
+
+main a {
+    color: var(--textWhite);
+    background-color: var(--mediumBlue);
+
+    display: block;
+    font-size: 1rem;
+
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-align: center;
+    max-width: 130px;
+    margin: 2rem auto .2rem;
+
+    width: 100%;
+
+    transition: all .25s ease;
+}
+
 h2 {
     color: var(--textWhite);
     margin: 0 0 .7em 1rem;
@@ -873,6 +895,27 @@ li.item {
 }
 
 
+.download {
+    width: 1.7rem;
+    height: 1.7rem;
+    background-color: var(--lichterBlue);
+    border-radius: 50%;
+    position: absolute;
+    bottom: .7rem;
+    right: 1.5rem;
+}
+
+.download svg {
+    fill: var(--textWhite);
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    bottom: .7rem;
+    top: 4px;
+    left: 5.5px;
+}
+
+
 
 /*Detail pagina*/
 #detail section {
@@ -916,6 +959,8 @@ li.item {
 
 #detail button {
     padding: 10px;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
 }
 
@@ -930,6 +975,7 @@ li.item {
     text-align: center;
     max-width: 130px;
     transition: all .25s ease;
+    margin: 0;
 }
 
 #detail a:hover,
