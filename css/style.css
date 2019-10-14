@@ -50,6 +50,7 @@ li {
 p {
     max-width: 30rem;
 }
+
 /******************
       Header
 ******************/
@@ -215,8 +216,24 @@ nav input[type="text"]:focus {
     pointer-events: all;
 }
 
-.menuActive li{
+.menuActive li {
     transform: translateX(0);
+}
+
+nav .terug svg {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--textWhite);
+    margin: 20px;
+    ;
+}
+
+nav h1 {
+    color: white;
+    font-weight: 500;
+    margin: -8px 0 0 0;
+    text-align: center;
+    font-size: 1.7rem;
 }
 
 /*Header landing pagina*/
@@ -538,11 +555,11 @@ label {
     padding: 14px 32px;
     margin: 0 auto;
     border-radius: 100px;
-    
+
     color: var(--textWhite);
     background-color: var(--mediumBlue);
-    font-size: 1rem;    
-    text-align: center;   
+    font-size: 1rem;
+    text-align: center;
     align-self: center;
     transition: all .25s ease;
 
@@ -640,6 +657,300 @@ form fieldset {
 }
 
 
+.searchResult .zoekEmpty {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: 100%;
+    grid-column: 2;
+    max-width: 0;
+    text-align: left;
+
+    white-space: nowrap;
+    /* left: 0; */
+    display: inline-block;
+}
+
+
+select {
+    width: 50%;
+    max-width: 450px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+
+    background-color: var(--mediumDarkBlue);
+    border: 1.5px solid rgba(0, 0, 0, 0);
+    color: var(--textWhite);
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+
+    /* reset */
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--textWhite) 50%),
+        linear-gradient(135deg, var(--textWhite) 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+select:focus {
+    background-image:
+        linear-gradient(45deg, var(--textWhite) 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, var(--textWhite) 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 15px) 1em,
+        calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: var(--focus-col);
+    outline: 0;
+}
+
+
+
+
+
+
+/*Favorieten*/
+li.item {
+    box-sizing: border-box;
+    padding: 1.2rem 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    height: 185px;
+    background-color: var(--sand);
+    border-radius: 10px;
+
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "itemPic itemContent"
+        "itemLink itemLink";
+    color: var(--textWhite);
+    margin: 0;
+    align-items: center;
+}
+
+.item .itemContent {
+    grid-area: itemContent;
+}
+
+.item a {
+    display: block;
+    width: 100%;
+    max-width: 130px;
+    padding: 14px 32px;
+    margin: 0 auto;
+    border-radius: 100px;
+
+    color: var(--textWhite);
+    background-color: var(--mediumBlue);
+    font-size: 1rem;
+    text-align: center;
+    align-self: center;
+    transition: all .25s ease;
+
+    grid-area: itemLink;
+}
+
+.item .pic {
+    width: 75px;
+    height: 75px;
+    background-color: var(--mediumBlue);
+    border-radius: 18px;
+
+    grid-area: itemPic;
+}
+
+.item svg {
+    max-width: 1.3rem;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+
+    fill: var(--mediumBlue);
+}
+
+.item a {
+    color: var(--textWhite);
+    background-color: var(--mediumBlue);
+
+    display: block;
+    font-size: 1rem;
+
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-align: center;
+    max-width: 130px;
+    margin: 0 auto;
+
+    width: 100%;
+
+    transition: all .25s ease;
+
+    grid-area: itemLink;
+}
+
+#favoriet section {
+    margin: 0 auto 1.5rem auto;
+}
+
+#favoriet section ul {
+    margin: 0 auto;
+    width: 100%;
+
+    padding: 1.1rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 1300px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+    grid-template-rows: auto;
+    justify-items: center;
+
+    align-items: center;
+    grid-gap: 1.1rem;
+}
+
+
+#favoriet section ul li {
+    justify-self: center;
+}
+
+#favoriet section:first-child {
+    padding-top: 6rem;
+}
+
+#favoriet section:first-child div:first-child {
+    box-sizing: border-box;
+    max-width: 1300px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    ;
+}
+
+.wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+
+
+/*Detail pagina*/
+#detail section {
+    padding-top: 6rem;
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "detailTitle"
+        "detailImg"
+        "detailButtons"
+        "detailText";
+    width: 100%;
+}
+
+#detail h2 {
+    grid-area: detailTitle;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+#detail .img {
+    box-sizing: border-box;
+    margin: 1rem;
+    grid-area: detailImg;
+    width: 400px;
+    max-width: 90vw;
+    height: 400px;
+    max-height: 90vw;
+    border-radius: 10px;
+    background-color: var(--sand);
+}
+
+#detail .buttons {
+    display: flex;
+    justify-content: flex-end;
+    grid-area: detailButtons;
+    padding-right: 1rem;
+}
+
+#detail button {
+    padding: 10px;
+    border-radius: 50%;
+}
+
+#detail a {
+    display: block;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--textWhite);
+    background-color: var(--mediumBlue);
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-align: center;
+    max-width: 130px;
+    margin: 0 1rem;
+    transition: all .25s ease;
+}
+
+#detail a:hover,
+#detail a:focus {
+    background-color: var(--skinOrange);
+    color: var(--textBlack);
+}
+
+#detail .buttons button svg {
+    fill: var(--textWhite);
+    align-self: center;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+#detail p {
+    grid-area: detailText;
+    padding: 1.3rem;
+    color: var(--textWhite);
+}
+
+#detail svg {
+    fill: var(--textWhite);
+}
+
+
+
 /******************
       Footer
 ******************/
@@ -656,7 +967,7 @@ footer p {
     padding: .7rem;
 }
 
-@media screen and (min-width: 768px) { 
+@media screen and (min-width: 768px) {
     nav form {
         max-width: 50vw;
     }
@@ -706,25 +1017,23 @@ footer p {
         align-items: center;
     }
 
-
-
     .getLocation {
         border-radius: 10px;
         width: 50%;
-        max-width: 15rem;;
+        max-width: 15rem;
         height: auto;
         margin: 0 0 0 1rem;
         box-sizing: border-box;
         color: var(--textWhite);
-    
+
         padding: 13px 25px 13px 45px;
         outline: none;
-    
+
         background-color: var(--mediumBlue);
         position: relative;
         text-align: left;
     }
-    
+
     .getLocation svg {
         position: absolute;
         top: 0;
@@ -732,6 +1041,20 @@ footer p {
         width: auto;
         height: 100%;
         transform: scale(.65);
+    }
+
+    #detail section {
+        width: 60rem;
+        max-width: 100vw;
+        margin: 0 auto;;
+        padding-top: 6rem;
+        grid-gap: 1.3rem;
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "detailTitle detailTitle"
+            "detailImg detailText"
+            ". detailButtons"
     }
 }
 

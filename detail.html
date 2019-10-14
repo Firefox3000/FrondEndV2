@@ -11,9 +11,16 @@
 <body>
     <header>
         <nav class="zoekNav">
-            <a href="index.html">Terug
-                <img src="img/iconsZoek.svg" alt="Terug">
+            <a class="terug" href="index.html">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+                    <path d="M382.7,182.7H59.1l77.2-77.2c6.8-6.8,6.8-17.7,0-24.5c-6.8-6.8-17.7-6.8-24.5,0L5.1,187.8
+                                c-6.8,6.8-6.8,17.7,0,24.5L111.8,319c3.4,3.4,7.8,5.1,12.2,5.1c4.4,0,8.9-1.7,12.2-5.1c6.8-6.8,6.8-17.7,0-24.5l-77.2-77.2h323.6
+                                c9.6,0,17.3-7.8,17.3-17.3C400,190.4,392.3,182.7,382.7,182.7z" />
+                </svg>
             </a>
+
+            <h1>Details</h1>
 
             <button id="burgerMenu">
                 <svg x="0px" y="0px" viewBox="0 0 25 21" xml:space="preserve">
@@ -25,10 +32,10 @@
 
             <ul>
                 <li>
-                    <a href="#">Favoriete routes</a>
+                    <a href="favoriet.html">Favoriete routes</a>
                 </li>
                 <li>
-                    <a href="#">Routes zoeken</a>
+                    <a href="zoeken.html">Routes zoeken</a>
                 </li>
                 <li>
                     <a href="#">Mijn account</a>
@@ -47,20 +54,43 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Wandelroute</h1>
-        <img src="" alt="">
-        <a href="#">Start de route</a>
-        <button></button>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit harum earum dignissimos numquam fugiat
-            temporibus excepturi corrupti perferendis libero necessitatibus. Amet repellat, esse accusantium voluptate
-            repellendus aliquam sapiente veniam corrupti pariatur odit quaerat debitis possimus unde consectetur
-            corporis dolores architecto! Porro tempora quam voluptas, facilis aut, rem omnis corporis repudiandae nihil
-            harum ratione ullam nam quibusdam atque itaque error dolores iste. Distinctio dignissimos quidem assumenda
-            autem deserunt laborum unde laboriosam illum.</p>
+    <main id="detail">
+        <section>
+            <h2>Borgerpad</h2>
+            <!-- <div class="img"></div> -->
+            <img class="img" src="img/Midden-Limburg.jpg" alt="">
+            <div class="buttons">
+                <a href="#">Start de route</a>
+                <button>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384.97 384.97"
+                        style="enable-background:new 0 0 384.97 384.97;" xml:space="preserve">
+                        <path d="M372.939,264.667c-6.641,0-12.03,5.39-12.03,12.03v84.212H24.061v-84.212c0-6.641-5.39-12.03-12.03-12.03
+                   S0,270.056,0,276.697v96.242c0,6.641,5.39,12.03,12.03,12.03h360.909c6.641,0,12.03-5.39,12.03-12.03v-96.242
+                   C384.97,270.056,379.58,264.667,372.939,264.667z" />
+                        <path
+                            d="M183.703,285.202c4.68,4.632,12.512,4.68,17.191,0l84.2-83.009c4.752-4.704,4.74-12.319,0-17.011
+                   c-4.74-4.704-12.439-4.704-17.179,0l-63.46,62.558V12.03c0-6.641-5.438-12.03-12.151-12.03s-12.151,5.39-12.151,12.03v235.71
+                   l-63.46-62.558c-4.752-4.704-12.439-4.704-17.179,0c-4.752,4.704-4.752,12.319,0,17.011L183.703,285.202z" />
+                    </svg>
+                </button>
+            </div>
+
+            <p>
+                Het Groninger Borgenpad is verdeeld in etappes van ongeveer 12 kilometer. Daarnaast zijn er
+                rondwandelingen van 11 tot 15 kilometer die starten vanaf een borg. Tussen de borgen door biedt het Groninger Borgenpad
+                je natuur en afwisselende landschappen: van waterrijke polders tot beschutte houtsingels. Je wandelt door
+                streken als het Westerkwartier, Fivelingo en Oldambt. Deze streken hebben ieder hun eigen kenmerken en
+                charmes. Een deel van de borgen die je tijdens je wandeling passeert, is te bezoeken. We lichten vijf
+                bijzondere borgen aan het Groninger Borgenpad voor je uit.
+            </p>
+        </section>
     </main>
 
     <footer>
-        <p>&#9400; Sam de Kanter 2019</p>
+        <!-- <p>&#9400; Sam de Kanter 2019</p> -->
     </footer>
+
+
+    <script src="js/script.js"></script>
 </body>

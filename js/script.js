@@ -29,6 +29,7 @@ document.querySelector('#burgerMenu').addEventListener('click', toggleNav);
 
 function favorite(e) {
     e.currentTarget.classList.toggle('favIconActive');
+    console.log('fav gevonden')
 }
 
 async function getApi() {
@@ -94,7 +95,7 @@ function createRouteElements() {
 
         // Create link
         let a = document.createElement('a');
-        a.href = '#';
+        a.href = 'detail.html';
         a.innerHTML = 'Start de route';
         listItem.appendChild(a);
     }

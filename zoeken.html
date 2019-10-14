@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8">
@@ -11,9 +11,17 @@
 <body>
     <header>
         <nav class="zoekNav">
-            <a href="index.html">Terug
-                <img src="img/iconsZoek.svg" alt="Terug">
+            <a class="terug" href="index.html">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400"
+                    style="enable-background:new 0 0 400 400;" xml:space="preserve">
+                    <path d="M382.7,182.7H59.1l77.2-77.2c6.8-6.8,6.8-17.7,0-24.5c-6.8-6.8-17.7-6.8-24.5,0L5.1,187.8
+		                c-6.8,6.8-6.8,17.7,0,24.5L111.8,319c3.4,3.4,7.8,5.1,12.2,5.1c4.4,0,8.9-1.7,12.2-5.1c6.8-6.8,6.8-17.7,0-24.5l-77.2-77.2h323.6
+		                c9.6,0,17.3-7.8,17.3-17.3C400,190.4,392.3,182.7,382.7,182.7z" />
+                </svg>
             </a>
+
+            <h1>Zoeken</h1>
 
             <button id="burgerMenu">
                 <svg x="0px" y="0px" viewBox="0 0 25 21" xml:space="preserve">
@@ -25,10 +33,10 @@
 
             <ul>
                 <li>
-                    <a href="#">Favoriete routes</a>
+                    <a href="favoriet.html">Favoriete routes</a>
                 </li>
                 <li>
-                    <a href="#">Routes zoeken</a>
+                    <a href="zoeken.html">Routes zoeken</a>
                 </li>
                 <li>
                     <a href="#">Mijn account</a>
@@ -65,12 +73,6 @@
                     </button>
                 </div>
             </fieldset>
-            <!-- Keuken<br>
-            <select class="dropdown1" name="dropown">
-                <option value="chinees">Chinees</option>
-                <option value="grieks">Grieks</option>
-                <option value="italiaans">Italiaans</option>
-            </select> -->
 
             <label for="zoekRange">Kies afstand</label>
             <input id="zoekRange" class="range" type="range" min="1" max="251" value="100">
@@ -80,24 +82,8 @@
         </form>
 
         <ul class="searchResult">
+            <li class="zoekEmpty">Zoek op een locatie om wandelroutes te vinden</li>
         </ul>
-        <!-- 
-        <li>
-            <div class="pic"></div>
-            <div class="itemContent">
-                <h3>Route 1</h3>
-                <p>8,3 km | 1,5 uur</p>
-            </div>
-            <a href="#">Start de Route</a>
-            <svg class="favIcon" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400"
-                style="enable-background:new 0 0 400 400;" xml:space="preserve">
-                <path d="M283.5,18.5c-18.6,0-36.4,4.3-52.9,12.7c-11.2,5.7-21.5,13.3-30.4,22.4c-8.8-9-19.2-16.7-30.4-22.4
-                    c-16.5-8.4-34.3-12.7-52.9-12.7C52.7,18.5,0.5,70.8,0.5,135c0,45.5,24,93.8,71.4,143.6c39.6,41.6,88,76.2,121.7,98l6.7,4.3l6.7-4.3
-                    c33.7-21.8,82.1-56.4,121.7-98C376,228.8,400,180.5,400,135C400,70.8,347.7,18.5,283.5,18.5z" />
-            </svg>
-        </li> -->
-
     </main>
 
     <footer>
