@@ -20,7 +20,6 @@ function setup() {
 setup()
 
 function toggleNav() {
-    // document.querySelector('.burgerMenu').classList.toggle('menuActive');
     document.querySelector('nav').classList.toggle('menuActive');
 }
 
@@ -37,8 +36,8 @@ async function getApi() {
     let api1 = weatherApiUrl + document.querySelector('#zoekLocatie').value + weatherApiKey;
     console.log(api1);
 
-    weatherData = await fetch(api1);
-    // weatherData = await fetch('http://127.0.0.1:5500/weather.json');
+    // weatherData = await fetch(api1);
+    weatherData = await fetch('http://127.0.0.1:5500/weather.json');
     weatherData = await weatherData.json();
     console.log(weatherData);
 
@@ -50,8 +49,8 @@ async function getApi() {
     let api2 = hikeApiUrl + 'lat=' + lat + '&lon=' + lon + '&maxDistance=' + document.querySelector('.range').value + hikeApiKey;
     console.log(api2);
 
-    hikeData = await fetch(api2);
-    // hikeData = await fetch('http://127.0.0.1:5500/hike.json')
+    // hikeData = await fetch(api2);
+    hikeData = await fetch('http://127.0.0.1:5500/hike.json')
     hikeData = await hikeData.json();
     console.log(hikeData);
 
@@ -68,7 +67,9 @@ function createRouteElements() {
     for (let i = 0; i < hikeData.trails.length; i++) {
         // create li in ul
         let parrentElement = document.querySelector('.searchResult');
-        parrentElement.appendChild(document.createElement('li'));
+        let liItem = document.createElement('li');
+        liItem.classList.add('item');
+        parrentElement.appendChild(liItem);
 
         let listItem = document.querySelectorAll('.searchResult li')[i];
 
@@ -138,7 +139,7 @@ function sliderValue() {
     if (document.querySelector('#zoekRange').value < 250) {
         document.querySelector('.viewRange').innerHTML = document.querySelector('#zoekRange').value;
     } else {
-        document.querySelector('.viewRange').innerHTML = 'Alle afstanden';
+        document.querySelector('.viewRange').innerHTML = '> 250 km';
     }
 }
 
