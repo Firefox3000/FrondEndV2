@@ -945,12 +945,22 @@ button .favIcon {
     top: 0;
     left: 0;
     background-color: var(--lichterBlue);
+    
 }
 
 button .favIconActive {
     background-color: var(--skinOrange);
 }
 
+
+.favIcon path {
+    fill: var(--mediumBlue);
+}
+
+
+.favIconActive path {
+    fill: var(--skinOrange);
+}
 
 /******************
       Footer
