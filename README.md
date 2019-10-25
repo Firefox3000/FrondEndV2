@@ -21,3 +21,7 @@ https://codeburst.io/learn-how-to-create-html-elements-with-plain-javascript-4f1
 
 **JS geolocation**
 https://www.w3schools.com/html/html5_geolocation.asp
+
+**Stijling checkboxes**
+https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
+

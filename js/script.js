@@ -4,8 +4,6 @@ const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const hikeApiUrl = 'https://www.hikingproject.com/data/get-trails?';
 const hikeApiKey = '&key=200612053-f2907f0c887fb6db20bc6ef07aacbced';
 
-// https://www.hikingproject.com/data/get-trails?lat=51.59&lon=-4.78&maxDistance=10&key=200612053-f2907f0c887fb6db20bc6ef07aacbced
-
 var weatherData;
 var hikeData;
 
@@ -36,7 +34,6 @@ async function getApi() {
     let api1 = weatherApiUrl + document.querySelector('#zoekLocatie').value + weatherApiKey;
     console.log(api1);
 
-    // weatherData = await fetch(api1);
     weatherData = await fetch('http://127.0.0.1:5500/weather.json');
     weatherData = await weatherData.json();
     console.log(weatherData);
@@ -49,7 +46,6 @@ async function getApi() {
     let api2 = hikeApiUrl + 'lat=' + lat + '&lon=' + lon + '&maxDistance=' + document.querySelector('.range').value + hikeApiKey;
     console.log(api2);
 
-    // hikeData = await fetch(api2);
     hikeData = await fetch('http://127.0.0.1:5500/hike.json')
     hikeData = await hikeData.json();
     console.log(hikeData);
@@ -102,24 +98,6 @@ function createRouteElements() {
     }
 }
 
-/*
-<li>
-<div class="pic"></div>
-<div class="itemContent">
-    <h3>Route 1</h3>
-    <p>8,3 km | 1,5 uur</p>
-</div>
-<a href="#">Start de Route</a>
-<svg class="favIcon" version="1.1" xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400"
-    style="enable-background:new 0 0 400 400;" xml:space="preserve">
-    <path d="M283.5,18.5c-18.6,0-36.4,4.3-52.9,12.7c-11.2,5.7-21.5,13.3-30.4,22.4c-8.8-9-19.2-16.7-30.4-22.4
-        c-16.5-8.4-34.3-12.7-52.9-12.7C52.7,18.5,0.5,70.8,0.5,135c0,45.5,24,93.8,71.4,143.6c39.6,41.6,88,76.2,121.7,98l6.7,4.3l6.7-4.3
-        c33.7-21.8,82.1-56.4,121.7-98C376,228.8,400,180.5,400,135C400,70.8,347.7,18.5,283.5,18.5z" />
-</svg>
-</li> -->
-*/
-
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(logLocation);
@@ -131,8 +109,6 @@ function logLocation(position) {
     console.log(position.coords.longitude);
     document.querySelector('#zoekLocatie').value = 'Lat: ' + position.coords.latitude.toFixed(2) + ' Lon: ' + position.coords.longitude.toFixed(2);
 }
-
-
 
 
 function sliderValue() {

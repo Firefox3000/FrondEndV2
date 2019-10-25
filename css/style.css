@@ -144,7 +144,7 @@ nav li a:after {
 
 nav li a:hover::after,
 nav li a:focus::after {
-    width: 75%;
+    width: 50%;
 }
 
 /*Hamburger menu*/
@@ -439,14 +439,29 @@ h2 {
 }
 
 
-
-
 #zoeken {
     padding-top: 6rem;
 }
 
 /*form defeault stijling*/
 form {
+    width: 100%;
+}
+
+fieldset {
+    color: var(--textWhite);
+    border: none;
+    padding: .1rem;
+    margin: .5rem auto;
+}
+
+legend {
+    margin: .5rem 0;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .7rem;
     width: 100%;
 }
 
@@ -483,7 +498,6 @@ input[type=text] {
     box-sizing: border-box;
     width: 100%;
     padding: 16px 25px;
-    /* max-width: 80vw; */
     margin: .7em 0;
     display: inline-block;
     border: 1.2px solid var(--text-col1);
@@ -509,6 +523,7 @@ input[type=submit],
 button {
     border: none;
     cursor: pointer;
+    margin-top: 1rem;
 
     font-size: 1rem;
     padding: 16px 32px;
@@ -620,6 +635,7 @@ form fieldset {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 
 
@@ -637,16 +653,15 @@ form fieldset {
     white-space: nowrap;
     width: 100%;
     margin-left: -42rem;
-    /* left: 0; */
     display: inline-block;
 }
 
 
 select {
-    width: 50%;
+    width: 100%;
     max-width: 450px;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 1rem 0;
     display: inline-block;
     box-sizing: border-box;
 
@@ -700,9 +715,67 @@ select:focus {
     outline: 0;
 }
 
+/*Checkboxes*/ 
+.checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: .8rem;
+  width: auto;
+  margin-right: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--textWhite);
+}
 
+.checkbox:hover input ~ .checkmark {
+  background-color: var(--textWhite);
+}
+
+.checkbox input:checked ~ .checkmark {
+  background-color: var(--orangie);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--textWhite);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 
 
 /*Favorieten*/

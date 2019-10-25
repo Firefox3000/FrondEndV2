@@ -15,7 +15,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
                     <path
                         d="M382.7 182.7H59.1l77.2-77.2c6.8-6.8 6.8-17.7 0-24.5-6.8-6.8-17.7-6.8-24.5 0L5.1 187.8c-6.8 6.8-6.8 17.7 0 24.5L111.8 319c3.4 3.4 7.8 5.1 12.2 5.1 4.4 0 8.9-1.7 12.2-5.1 6.8-6.8 6.8-17.7 0-24.5L59 217.3h323.6c9.6 0 17.3-7.8 17.3-17.3.1-9.6-7.6-17.3-17.2-17.3z" />
-                    </svg>
+                </svg>
             </a>
 
             <h1>Zoeken</h1>
@@ -56,6 +56,7 @@
         <form>
             <fieldset class="zoekLocatie">
                 <legend>Locatie:</legend>
+                <label for="zoekLocatie">Zoek een wandelroute</label>
                 <div>
                     <input id="zoekLocatie" type="text" name="Zoek" placeholder="Zoeken een wandel locatie">
                     <button class="getLocation">Gebuik huidige locatie
@@ -65,11 +66,37 @@
                         </svg>
                     </button>
                 </div>
+
+                <label for="zoekRange">Kies afstand</label>
+                <input id="zoekRange" class="range" type="range" min="1" max="251" value="100">
+                <p class="viewRange">100</p>
             </fieldset>
 
-            <label for="zoekRange">Kies afstand</label>
-            <input id="zoekRange" class="range" type="range" min="1" max="251" value="100">
-            <p class="viewRange">100</p>
+            <fieldset>
+                <legend>Hoogte verschil:</legend>
+                <label class="checkbox">Vlak
+                    <input type="checkbox" name="vlak" value="Valk">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox">Heuvels
+                    <input type="checkbox" name="heuvels" value="Heuvels">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="checkbox">Bergen
+                    <input type="checkbox" name="bergen" value="Bergen">
+                    <span class="checkmark"></span>
+                </label>
+            </fieldset>         
+
+            <label for="filterDropdown">Resulataten filter</label>
+            <select id="filterDropdown">
+                <option value="">Lengte laag hoog</option>
+                <option value="">Lengte hoog laag</option>
+                <option value="">Afstand laag hoog</option>
+                <option value="">Afstand hoog laag</option>
+            </select>
 
             <input class="submitZoeken" type="submit" value="Zoeken">
         </form>
