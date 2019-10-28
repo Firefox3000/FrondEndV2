@@ -1,4 +1,4 @@
-const weatherApiKey = '&units=metric&APPID=d2eb5b400421ec9aceb37cab13852517';
+const weatherApiKey = '&units=metric&APPID=d0bb4e825a22fb59516bd2b69dbc3d77';
 const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 
 const hikeApiUrl = 'https://www.hikingproject.com/data/get-trails?';
@@ -34,7 +34,7 @@ async function getApi() {
     let api1 = weatherApiUrl + document.querySelector('#zoekLocatie').value + weatherApiKey;
     console.log(api1);
 
-    weatherData = await fetch('http://127.0.0.1:5500/weather.json');
+    weatherData = await fetch(api1);
     weatherData = await weatherData.json();
     console.log(weatherData);
 
@@ -46,7 +46,7 @@ async function getApi() {
     let api2 = hikeApiUrl + 'lat=' + lat + '&lon=' + lon + '&maxDistance=' + document.querySelector('.range').value + hikeApiKey;
     console.log(api2);
 
-    hikeData = await fetch('http://127.0.0.1:5500/hike.json')
+    hikeData = await fetch(api2);
     hikeData = await hikeData.json();
     console.log(hikeData);
 
