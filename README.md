@@ -2,7 +2,7 @@
 Versie 2 voor het vak Front end, een website voor mensen die willen wandelen.
 
 
-##Bronnen:
+## Bronnen:
 
 **Horizontale scroll items:**
 https://uxdesign.cc/creating-horizontal-scrolling-containers-the-right-way-css-grid-c256f64fc585
